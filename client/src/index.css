@@ -126,3 +126,13 @@ body {
   letter-spacing: -0.49px;
   align-self: center;
 }
+#already span a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #2d9cdb;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.49px;
+}

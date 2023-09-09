@@ -3,6 +3,7 @@ import facebook from "../../assets/Facebook.svg";
 import google from "../../assets/Google.svg";
 import github from "../../assets/Gihub.svg";
 import twitter from "../../assets/Twitter.svg";
+import { Link } from "react-router-dom";
 
 const RegisterPage = () => {
   return (
@@ -23,8 +24,18 @@ const RegisterPage = () => {
         paths for you to choose
       </p>
       <form>
-        <input type="email" id="email" placeholder="Email" />
-        <input type="password" id="password" placeholder="Password" />
+        <input
+          type="email"
+          id="email"
+          placeholder="Email"
+          autoComplete="username"
+        />
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+          autoComplete="current-password"
+        />
         <button type="submit" id="submit">
           Start coding now
         </button>
@@ -44,7 +55,12 @@ const RegisterPage = () => {
           <img src={github} alt="github logo" />
         </li>
       </ul>
-      <p id="already">Already a member? Login</p>
+      <p id="already">
+        Already a member?
+        <span>
+          <Link to="/login"> &nbsp;Login</Link>
+        </span>
+      </p>
     </div>
   );
 };
