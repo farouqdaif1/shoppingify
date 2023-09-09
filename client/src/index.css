@@ -14,7 +14,7 @@ body {
   height: 100vh;
   background: rgba(250, 250, 251, 1);
 }
-.loginContainer {
+.logContainer {
   width: 100%;
   height: 100vh;
   padding: 17.2px 21.4px 18.5px;
@@ -22,12 +22,12 @@ body {
   flex-direction: column;
   align-items: flex-start;
 }
-.loginContainer .logo {
+.logContainer .logo {
   width: 130.173583984375px;
   height: 18px;
   margin-bottom: 27.46px;
 }
-.loginContainer h1 {
+.logContainer h1 {
   width: 100%;
   color: #333;
   font-size: 18px;
@@ -37,7 +37,7 @@ body {
   letter-spacing: -0.63px;
   margin-bottom: 14.5px;
 }
-.loginContainer p {
+.logContainer p {
   color: #333;
   font-size: 16px;
   font-style: normal;
@@ -89,7 +89,7 @@ body {
   background: #2f80ed;
   margin-bottom: 40.5px;
 }
-.loginContainer .or {
+.logContainer .or {
   color: #828282;
   font-size: 14px;
   font-style: normal;
@@ -135,4 +135,13 @@ body {
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.49px;
+}
+@media screen and (min-width: 768px) {
+  .logContainer {
+    width: 473.831px;
+    height: 634.303px;
+    flex-shrink: 0;
+    border-radius: 24px;
+    border: 1px solid #bdbdbd;
+  }
 }

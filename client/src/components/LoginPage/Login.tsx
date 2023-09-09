@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   return (
-    <div className="loginContainer">
+    <div className="login logContainer">
       <a href="/">
         <img
           src={devChallenge}

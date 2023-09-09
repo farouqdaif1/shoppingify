@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const RegisterPage = () => {
   return (
-    <div className="loginContainer">
+    <div className=" register logContainer">
       <a href="/">
         <img
           src={devChallenge}
