@@ -4,8 +4,19 @@ import google from "../../assets/Google.svg";
 import github from "../../assets/Gihub.svg";
 import twitter from "../../assets/Twitter.svg";
 import { Link } from "react-router-dom";
-
+import { FormEvent, useState } from "react";
+import { useSignup } from "../../hooks/useSignup";
 const RegisterPage = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { signup, error, loading } = useSignup();
+  const handelSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    console.log("email:", email);
+    console.log("password:", password);
+    await signup(email, password);
+  };
+
   return (
     <div className=" register logContainer">
       <a href="/">
@@ -23,22 +34,27 @@ const RegisterPage = () => {
         Master web development by making real-life projects. There are multiple
         paths for you to choose
       </p>
-      <form>
+      <form onSubmit={handelSubmit}>
         <input
           type="email"
           id="email"
           placeholder="Email"
           autoComplete="username"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="password"
           id="password"
           placeholder="Password"
           autoComplete="current-password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit" id="submit">
+        <button disabled={loading} type="submit" id="submit">
           Start coding now
         </button>
+        {error && <div className="error">{error}</div>}
       </form>
       <p className="or">or continue with these social profile</p>
       <ul className="social-media">
