@@ -5,13 +5,16 @@ import github from "../../assets/Gihub.svg";
 import twitter from "../../assets/Twitter.svg";
 import { Link } from "react-router-dom";
 import { FormEvent, useState } from "react";
+import { useLogin } from "../../hooks/useLogin";
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { login, loading, error } = useLogin();
   const handelSubmit = async (e: FormEvent) => {
     e.preventDefault();
     console.log("email:", email);
     console.log("password:", password);
+    await login(email, password);
   };
 
   return (
@@ -41,9 +44,10 @@ const LoginPage = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit" id="submit">
+        <button disabled={loading} type="submit" id="submit">
           Start coding now
         </button>
+        {error && <div className="errorMassage">{error.error}</div>}
       </form>
       <p className="or">or continue with these social profile</p>
       <ul className="social-media">
@@ -63,7 +67,7 @@ const LoginPage = () => {
       <p id="already">
         Don’t have an account yet?
         <span>
-          <Link to="/"> &nbsp;Register</Link>
+          <Link to="/register"> &nbsp;Register</Link>
         </span>
       </p>
     </div>
