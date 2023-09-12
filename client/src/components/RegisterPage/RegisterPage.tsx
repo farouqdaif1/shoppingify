@@ -54,7 +54,7 @@ const RegisterPage = () => {
         <button disabled={loading} type="submit" id="submit">
           Start coding now
         </button>
-        {error && <div className="error">{error}</div>}
+        {error && <div className="errorMassage">{error.error}</div>}
       </form>
       <p className="or">or continue with these social profile</p>
       <ul className="social-media">

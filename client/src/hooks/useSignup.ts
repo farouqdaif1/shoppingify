@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 export const useSignup = () => {
     const [loading, setLoading] = useState<boolean>(false);
-    const [error, setError] = useState(null)
+    const [error, setError] = useState<null | { error: string }>(null)
     const { dispatch } = useAuthContext();
     const signup = async (email: string, password: string) => {
         setLoading(true);
@@ -19,8 +19,9 @@ export const useSignup = () => {
                 dispatch({ type: "LOGIN", payload: res.data })
                 setLoading(false);
             }).catch((err) => {
+                console.log(err.response.data)
                 setLoading(false);
-                setError(err);
+                setError(err.response.data);
             });
     }
     return { signup, loading, error }
