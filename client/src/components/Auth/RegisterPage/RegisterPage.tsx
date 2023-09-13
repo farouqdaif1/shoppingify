@@ -1,24 +1,24 @@
-import devChallenge from "../../assets/devchallenges.svg";
-import facebook from "../../assets/Facebook.svg";
-import google from "../../assets/Google.svg";
-import github from "../../assets/Gihub.svg";
-import twitter from "../../assets/Twitter.svg";
+import devChallenge from "../../../assets/devchallenges.svg";
+import facebook from "../../../assets/Facebook.svg";
+import google from "../../../assets/Google.svg";
+import github from "../../../assets/Gihub.svg";
+import twitter from "../../../assets/Twitter.svg";
 import { Link } from "react-router-dom";
 import { FormEvent, useState } from "react";
-import { useLogin } from "../../hooks/useLogin";
-const LoginPage = () => {
+import { useSignup } from "../../../hooks/useSignup";
+const RegisterPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login, loading, error } = useLogin();
+  const { signup, error, loading } = useSignup();
   const handelSubmit = async (e: FormEvent) => {
     e.preventDefault();
     console.log("email:", email);
     console.log("password:", password);
-    await login(email, password);
+    await signup(email, password);
   };
 
   return (
-    <div className="login logContainer">
+    <div className=" register logContainer">
       <a href="/">
         <img
           src={devChallenge}
@@ -26,7 +26,14 @@ const LoginPage = () => {
           alt="devChallenge logo"
         />
       </a>
-      <h1>Login</h1>
+      <h1>
+        Join thousands of learners from
+        <br /> around the world
+      </h1>
+      <p>
+        Master web development by making real-life projects. There are multiple
+        paths for you to choose
+      </p>
       <form onSubmit={handelSubmit}>
         <input
           type="email"
@@ -65,13 +72,13 @@ const LoginPage = () => {
         </li>
       </ul>
       <p id="already">
-        Don’t have an account yet?
+        Already a member?
         <span>
-          <Link to="/register"> &nbsp;Register</Link>
+          <Link to="/login"> &nbsp;Login</Link>
         </span>
       </p>
     </div>
   );
 };
 
-export default LoginPage;
+export default RegisterPage;

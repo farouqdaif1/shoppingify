@@ -1,7 +1,7 @@
-import LoginPage from "./components/LoginPage/Login";
-import RegisterPage from "./components/RegisterPage/RegisterPage";
+import LoginPage from "./components/Auth/LoginPage/Login";
+import RegisterPage from "./components/Auth/RegisterPage/RegisterPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./components/Home/Home";
+import UserDetails from "./components/UserDetails/UserDetails";
 function App() {
   return (
     <>
@@ -10,7 +10,7 @@ function App() {
           <Routes>
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/" element={<Home />} />
+            <Route path="/userdetails" element={<UserDetails />} />
           </Routes>
         </Router>
       </div>

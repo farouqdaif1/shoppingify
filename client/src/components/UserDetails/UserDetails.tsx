@@ -1,6 +1,6 @@
 import { useLogout } from "../../hooks/useLogout";
 import { useAuthContext } from "../../hooks/useAuthContext";
-const Home = () => {
+const UserDetails = () => {
   const { logout } = useLogout();
   const { state } = useAuthContext();
   console.log("user", state);
@@ -17,4 +17,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default UserDetails;
