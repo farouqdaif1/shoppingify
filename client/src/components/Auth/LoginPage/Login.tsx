@@ -26,7 +26,7 @@ const LoginPage = () => {
           alt="devChallenge logo"
         />
       </a>
-      <h1>Login</h1>
+      <h1 id="loginHeader">Login</h1>
       <form onSubmit={handelSubmit}>
         <input
           type="email"
@@ -44,8 +44,8 @@ const LoginPage = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button disabled={loading} type="submit" id="submit">
-          Start coding now
+        <button disabled={loading} type="submit" id="submitLogin">
+          Login
         </button>
         {error && <div className="errorMassage">{error.error}</div>}
       </form>

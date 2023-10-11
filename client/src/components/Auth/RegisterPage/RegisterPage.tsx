@@ -74,7 +74,7 @@ const RegisterPage = () => {
       <p id="already">
         Already a member?
         <span>
-          <Link to="/login"> &nbsp;Login</Link>
+          <Link to="/login"> Login</Link>
         </span>
       </p>
     </div>
