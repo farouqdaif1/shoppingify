@@ -10,6 +10,7 @@ const UserDetails = () => {
   return (
     <div>
       <div>
+        <h1>User Details LoggedIn </h1>
         <span>{state.user?.email}</span>
         <button onClick={handleClick}>log out</button>
       </div>

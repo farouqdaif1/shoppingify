@@ -6,6 +6,7 @@ import twitter from "../../../assets/Twitter.svg";
 import { Link } from "react-router-dom";
 import { FormEvent, useState } from "react";
 import { useLogin } from "../../../hooks/useLogin";
+import { GoogleLogin } from "@react-oauth/google";
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -52,6 +53,10 @@ const LoginPage = () => {
       <p className="or">or continue with these social profile</p>
       <ul className="social-media">
         <li>
+          <GoogleLogin
+            onSuccess={(response) => console.log(response)}
+            onError={() => console.log("response")}
+          />
           <img src={google} alt="google logo" />
         </li>
         <li>
