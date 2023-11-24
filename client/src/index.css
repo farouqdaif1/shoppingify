@@ -1,69 +1,200 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+  font-family: "Noto Sans", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  background: rgba(250, 250, 251, 1);
+}
+.logContainer {
+  width: 100%;
+  height: 100vh;
+  padding: 17.2px 21.4px 18.5px;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  align-items: flex-start;
 }
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.logContainer .logo {
+  width: 130.173583984375px;
+  height: 18px;
+  margin-bottom: 27.46px;
 }
-
-button {
+.logContainer h1 {
+  width: 100%;
+  color: #333;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.63px;
+  margin-bottom: 14.5px;
+}
+#loginHeader {
+  margin-bottom: 27.25px;
+}
+.logContainer p {
+  color: #333;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.56px;
+  margin-bottom: 34.66px;
+}
+#email {
+  width: 335.065px;
+  height: 48px;
+  flex-shrink: 0;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  border: 1px solid #bdbdbd;
+  outline: none;
+  margin-bottom: 14.5px;
+}
+#email ::placeholder {
+  color: #828282;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.56px;
+}
+#password {
+  width: 335.065px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 1px solid #bdbdbd;
+  outline: none;
+  margin-bottom: 22.51px;
+}
+#submit {
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.56px;
+  outline: none;
+  border: none;
+  width: 335.065px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #2f80ed;
+  margin-bottom: 31.58px;
+}
+#submitLogin {
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.56px;
+  outline: none;
+  border: none;
+  width: 335.065px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #2f80ed;
+  margin-bottom: 32.66px;
+}
+.logContainer .or {
+  color: #828282;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.49px;
+  text-align: center;
+  margin-bottom: 22.51px;
+  align-self: center;
+}
+.login .social-media {
+  margin-bottom: 33.5px;
+}
+.social-media {
+  width: 230.78px;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 70.66px;
+  margin-right: 73.65px;
+  margin-bottom: 27.07px;
+  align-self: center;
+}
+.social-media li {
+  height: 42px;
+  width: 42px;
+  margin-right: 20.93px;
+}
+#already {
+  color: #828282;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.49px;
+  align-self: center;
+}
+#already span a {
+  text-decoration: none;
   cursor: pointer;
-  transition: border-color 0.25s;
+  color: #2d9cdb;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.49px;
 }
-button:hover {
-  border-color: #646cff;
+.errorMassage {
+  color: red;
+  align-self: center;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@media screen and (min-width: 600px) {
+  .container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
   }
-  a:hover {
-    color: #747bff;
+  .logContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 473.831px;
+    height: 634.303px;
+    flex-shrink: 0;
+    border-radius: 24px;
+    border: 1px solid #bdbdbd;
   }
-  button {
-    background-color: #f9f9f9;
+  .login {
+    width: 473.831px;
+    height: 544.372px;
+    flex-shrink: 0;
+  }
+  .register,
+  .login {
+    padding: 48.42px 58.57px 43.07px 58.57px;
+  }
+  .login #already {
+    margin-bottom: 0;
   }
 }
